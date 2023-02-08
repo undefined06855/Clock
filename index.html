@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <!-- Meta garbage -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" type="text/css" href="./style.css" />
+
+        <title> Clock </title>
+    </head>
+    <body>
+        <main id="wrapper">
+            <span>
+                <span class="segment on" data-segment="it_is">IT IS</span>
+                <span class="segment off filler">_</span>
+                <span class="segment off" data-segment="number_begin_5">FIV</span>
+            </span>
+            <span>
+                <span class="segment off" data-segment="number_begin_5">E</span>
+                <span class="segment off" data-segment="number_begin_10">TEN</span>
+                <span class="segment off" data-segment="number_begin_15">FIFTE</span>
+            </span>
+            <span>
+                <span class="segment off" data-segment="number_begin_15">EN</span>
+                <span class="segment off" data-segment="number_begin_20">TWENTY</span>
+                <span class="segment off" data-segment="number_begin_25">-</span>
+            </span>
+            <span>
+                <span class="segment off" data-segment="number_begin_25">FIVE</span>
+                <span class="segment off filler">_</span>
+                <span class="segment off" data-segment="minutes">MINU</span>
+            </span>
+            <span>
+                <span class="segment off" data-segment="minutes">TES</span>
+                <span class="segment off" data-segment="half">HALF</span>
+                <span class="segment off filler">_</span>
+                <span class="segment off" data-segment="past">P</span>
+            </span>
+            <span>
+                <span class="segment off" data-segment="past">AST</span>
+                <span class="segment off" data-segment="to">TO</span>
+                <span class="segment off filler">_</span>
+                <span class="segment off" data-segment="number_end_1">ONE</span>
+            </span>
+            <span>
+                <span class="segment off" data-segment="number_end_2">TWO</span>
+                <span class="segment off" data-segment="number_end_3">THREE</span>
+                <span class="segment off" data-segment="number_end_4">F</span>
+            </span>
+            <span>
+                <span class="segment off" data-segment="number_end_4">OUR</span>
+                <span class="segment off" data-segment="number_end_5">FIVE</span>
+                <span class="segment off" data-segment="number_end_6">SI</span>
+            </span>
+            <span>
+                <span class="segment off" data-segment="number_end_6">X</span>
+                <span class="segment off" data-segment="number_end_7">SEVEN</span>
+                <span class="segment off" data-segment="number_end_8">EIG</span>
+            </span>
+            <span>
+                <span class="segment off" data-segment="number_end_8">HT</span>
+                <span class="segment off" data-segment="number_end_9">NINE</span>
+                <span class="segment off" data-segment="number_end_10">TEN</span>
+            </span>
+            <span>
+                <span class="segment off" data-segment="number_end_11">ELEVEN</span>
+                <span class="segment off" data-segment="number_end_12">TWE</span>
+            </span>
+            <span>
+                <span class="segment off" data-segment="number_end_12">LVE</span>
+                <span class="segment off filler">_</span>
+                <span class="segment off" data-segment="pm">PM</span>
+                <span class="segment off" data-segment="am">AM</span>
+                <span class="segment on">.</span>
+            </span>
+        </main>
+
+        <script src="./scripts/setup.js"></script>
+        <script src="./scripts/main.js"></script>
+    </body>
+</html>
