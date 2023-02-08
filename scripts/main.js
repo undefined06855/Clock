@@ -6,9 +6,9 @@ var d = new Date()
 var t = [] // display time
 
 // debug
-const DEBUG = false
+const DEBUG = true
 const hour = 5
-const minute = 0
+const minute = 25
 
 if (DEBUG)
 {
@@ -37,8 +37,8 @@ function convertTo12Hour(hour)
 }
 
 if (findNearest(d.getMinutes()) == 0) t = ["", convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
-else if (d.getMinutes() < 30) t = [findNearest(d.getMinutes()), "minutes", "past", convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
-else if (d.getMinutes() > 30) t = [findNearest(60 - d.getMinutes()), "minutes", "to", d.getHours == 23 ? "midnight" : convertTo12Hour(d.getHours() + 1)[0], convertTo12Hour(d.getHours() + 1)[1]]
+else if (d.getMinutes() < 28) t = [findNearest(d.getMinutes()), "minutes", "past", convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
+else if (d.getMinutes() > 32) t = [findNearest(60 - d.getMinutes()), "minutes", "to", d.getHours == 23 ? "midnight" : convertTo12Hour(d.getHours() + 1)[0], convertTo12Hour(d.getHours() + 1)[1]]
 else t = ["half", "past", convertTo12Hour(d.getHours())]
 
 console.log(t)
@@ -52,7 +52,7 @@ for (var i = 0; i < t.length; i++)
 
     for (const element of document.getElementsByClassName("segment"))
     {
-        if (element.getAttribute("data-segment") == segment)
+        if (element.getAttribute("data-segment") == segment || (segment == "number_begin_25" && element.getAttribute("data-segment") == "number_begin_20"))
         {
             element.classList.add("on")
             element.classList.remove("off")
