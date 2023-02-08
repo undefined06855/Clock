@@ -6,7 +6,7 @@ var d = new Date()
 var t = [] // display time
 
 // debug
-const DEBUG = true
+const DEBUG = false
 const hour = 5
 const minute = 25
 
