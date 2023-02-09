@@ -43,10 +43,9 @@ function update()
 
     // format t
     for (var i = 0; i < t.length; i++)
-    {        
-        var segment = t[i]
-        if (i == 0 && typeof segment == "number") {segment = "number_begin_" + segment}
-        if (i == t.length - 2 && typeof segment == "number") {segment = "number_end_" + segment}
+    {
+        if (i == 0 && typeof t[i] == "number") {t[i] = "number_begin_" + t[i]}
+        if (i == t.length - 2 && typeof t[i] == "number") {t[i] = "number_end_" + t[i]}
     }
 
     for (const element of document.getElementsByClassName("segment"))
@@ -68,7 +67,7 @@ function update()
         element.classList.add("on")
         element.classList.remove("off")
     }
-    
+
     if (d.getSeconds() % 2 == 0)
     {
         document.getElementById("second_indicator").classList.add("on")
