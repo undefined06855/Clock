@@ -6,3 +6,6 @@ It's hardly responsive, so if your screen is too small or too big then bad luck.
 
 1.1
 * Fixed "twenty-five" only showing as "-five"
+
+1.2
+* Fixed a few small bugs
