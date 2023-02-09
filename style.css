@@ -48,6 +48,10 @@ html, body {
     font-size: 30px;
 }
 
+.off {
+    opacity: 0.8;
+}
+
 .on {
     background-color: #fff;
 }

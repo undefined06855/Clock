@@ -37,16 +37,9 @@ function update()
 
     if (d.getMinutes() >= 58) t = ["", convertTo12Hour(d.getHours() + 1)[0], convertTo12Hour(d.getHours() + 1)[1]]
     else if (d.getMinutes() <= 2) t = ["", convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
-    else if (d.getMinutes() <= 28) t = [findNearest(d.getMinutes()), "minutes", "past", convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
-    else if (d.getMinutes() >= 32) t = [findNearest(60 - d.getMinutes()), "minutes", "to", d.getHours == 23 ? "midnight" : convertTo12Hour(d.getHours() + 1)[0], convertTo12Hour(d.getHours() + 1)[1]]
+    else if (d.getMinutes() <= 28) t = ["number_begin_" + findNearest(d.getMinutes()), "minutes", "past", "number_end_" + convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
+    else if (d.getMinutes() >= 32) t = ["number_begin_" + findNearest(60 - d.getMinutes()), "minutes", "to", "number_end_" + convertTo12Hour(d.getHours() + 1)[0], convertTo12Hour(d.getHours() + 1)[1]]
     else                           t = ["half", "past", convertTo12Hour(d.getHours())]
-
-    // format t
-    for (var i = 0; i < t.length; i++)
-    {
-        if (i == 0 && typeof t[i] == "number") {t[i] = "number_begin_" + t[i]}
-        if (i == t.length - 2 && typeof t[i] == "number") {t[i] = "number_end_" + t[i]}
-    }
 
     for (const element of document.getElementsByClassName("segment"))
     {
