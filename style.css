@@ -1,3 +1,8 @@
+:root {
+    --bg-col: linear-gradient(170deg, rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    --text-col: #
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,12 +17,27 @@ html, body {
 }
 
 .letter, .filler {
-    all: inherit;
+    font-weight: 700;
+
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.8);
+    color: transparent;
+    background-color: #565656;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+
+    font-size: 40px;
+
     display: inline-block;
     text-align: center;
 
-    min-width: 38px;
-    min-height: 38px;
+    min-width: 1.25em;
+    min-height: 1.25em;
+}
+
+#watch {
+    display: flex;
+    flex-direction: column;
 }
 
 #wrapper {
@@ -30,28 +50,18 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 
-    background-color: #aaa;
-}
-
-.segment {
-    font-weight: 700;
-
-    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.8);
-    color: transparent;
-    background-color: #565656;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-
-    font-size: 30px;
+    background: var(--bg-col);
 }
 
 .off {
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
-.on {
-    background-color: #fff;
+.off, .off > * {
+    text-shadow: 0px 2px 3px #000;
+}
+
+.on > * {
+    text-shadow: 0px 2px 6px #fff;
 }

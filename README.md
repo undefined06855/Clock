@@ -9,3 +9,6 @@ It's hardly responsive, so if your screen is too small or too big then bad luck.
 
 1.2
 * Fixed a few small bugs
+
+1.3
+* Converted to dark mode and fixed more bugs

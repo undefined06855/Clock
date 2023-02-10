@@ -35,15 +35,15 @@ function update()
 {
     d = new Date()
 
-    if (d.getMinutes() >= 58) t = ["", convertTo12Hour(d.getHours() + 1)[0], convertTo12Hour(d.getHours() + 1)[1]]
-    else if (d.getMinutes() <= 2) t = ["", convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
+    if (d.getMinutes() >= 58) t = ["", "number_end_" + convertTo12Hour(d.getHours() + 1)[0], convertTo12Hour(d.getHours() + 1)[1]]
+    else if (d.getMinutes() <= 2) t = ["", "number_end_" + convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
     else if (d.getMinutes() <= 28) t = ["number_begin_" + findNearest(d.getMinutes()), "minutes", "past", "number_end_" + convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
     else if (d.getMinutes() >= 32) t = ["number_begin_" + findNearest(60 - d.getMinutes()), "minutes", "to", "number_end_" + convertTo12Hour(d.getHours() + 1)[0], convertTo12Hour(d.getHours() + 1)[1]]
     else                           t = ["half", "past", convertTo12Hour(d.getHours())]
 
     for (const element of document.getElementsByClassName("segment"))
     {
-        if (t.includes(element.getAttribute("data-segment")) || (t.includes("number_begin_25") && element.getAttribute("data-segment") == "number_begin_20"))
+        if (element.id != "second_indicator" && (t.includes(element.getAttribute("data-segment")) || (t.includes("number_begin_25") && element.getAttribute("data-segment") == "number_begin_20") || element.classList.contains("alwayson")))
         {
             element.classList.add("on")
             element.classList.remove("off")
@@ -53,12 +53,6 @@ function update()
             element.classList.add("off")
             element.classList.remove("on")
         }
-    }
-    
-    for (const element of document.getElementsByClassName("alwayson"))
-    {
-        element.classList.add("on")
-        element.classList.remove("off")
     }
 
     if (d.getSeconds() % 2 == 0)
