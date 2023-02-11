@@ -3,8 +3,8 @@ var t = [] // display time
 
 // debug
 const DEBUG = new URL(document.location).searchParams.get("debug")
-var hour = 22
-var minute = 58
+var hour = 5
+var minute = 30
 
 if (DEBUG === "")
 {
@@ -35,11 +35,17 @@ function update()
 {
     d = new Date()
 
-    if (d.getMinutes() >= 58) t = ["", "number_end_" + convertTo12Hour(d.getHours() + 1)[0], convertTo12Hour(d.getHours() + 1)[1]]
-    else if (d.getMinutes() <= 2) t = ["", "number_end_" + convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
+    if (DEBUG === "")
+    {
+        d.getHours = () => {return hour}
+        d.getMinutes = () => {return minute}
+    }
+
+         if (d.getMinutes() >= 58) t = ["", "number_end_" + convertTo12Hour(d.getHours() + 1)[0], convertTo12Hour(d.getHours() + 1)[1]]
+    else if (d.getMinutes() <= 2)  t = ["", "number_end_" + convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
     else if (d.getMinutes() <= 28) t = ["number_begin_" + findNearest(d.getMinutes()), "minutes", "past", "number_end_" + convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
     else if (d.getMinutes() >= 32) t = ["number_begin_" + findNearest(60 - d.getMinutes()), "minutes", "to", "number_end_" + convertTo12Hour(d.getHours() + 1)[0], convertTo12Hour(d.getHours() + 1)[1]]
-    else                           t = ["half", "past", convertTo12Hour(d.getHours())]
+    else                           t = ["half", "past", "number_end_" + convertTo12Hour(d.getHours())[0], convertTo12Hour(d.getHours())[1]]
 
     for (const element of document.getElementsByClassName("segment"))
     {
