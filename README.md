@@ -12,3 +12,6 @@ It's hardly responsive, so if your screen is too small or too big then bad luck.
 
 1.3
 * Converted to dark mode and fixed more bugs
+
+1.4
+* Fixed "half past x" showing up as "half past" (no number??)
